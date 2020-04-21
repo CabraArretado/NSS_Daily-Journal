@@ -12,18 +12,23 @@
 </head>
 
 <body>
-    <article class="container p-5">
+    <nav class="navbar navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">
+            Daily Journal - Felipe
+        </a>
+    </nav>
+    <article class="container">
         <form action="">
             <div class="form-group">
                 <label for="date">Date:</label>
                 <input class="" id="date" type="date">
             </div>
             <div>
-                <label for="concepts">Concepts Covered</label>
+                <label for="concepts">Concepts Covered:</label>
                 <input id="cencepts" placeholder="Concepts Covered" type="text">
             </div>
             <div>
-                <label for="journalentry">Journal Entry</label>
+                <label for="journalentry">Journal Entry:</label>
                 <input id="journalentry" placeholder="Journal Entry" type="text">
             </div>
             <div>
@@ -34,7 +39,10 @@
                     <option value="Tired">Tired</option>
                 </select>
             </div>
-        </form>
+            
+            <div class="form-group">
+                <button class="btn btn-primary" type="submit" id="button">Record Journal Entry</button>
+            </div>
     </article>
 </body>
 
