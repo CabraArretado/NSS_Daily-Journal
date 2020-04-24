@@ -7,11 +7,14 @@
     <!-- documentation at https://getbootstrap.com/docs/4.1/getting-started/introduction/ -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
         integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <!--  -->
+    <link rel="stylesheet" href="styles/journal.css">
 
     <title>Daily Journal - Felipe</title>
 </head>
 
 <body>
+    <!-- New Entry Form -->
     <nav class="navbar navbar-dark bg-dark">
         <a class="navbar-brand" href="#">
             Daily Journal - Felipe
@@ -39,11 +42,19 @@
                     <option value="Tired">Tired</option>
                 </select>
             </div>
-            
+
             <div class="form-group">
                 <button class="btn btn-primary" type="submit" id="button">Record Journal Entry</button>
             </div>
     </article>
+
+    <!-- Rendering the Entries -->
+    <article id="entryLog">
+        <h1>Entries</h1>
+    </article>
+
+    <!-- Script -->
+    <script src="scripts/journal.js"></script>
 </body>
 
 </html>
