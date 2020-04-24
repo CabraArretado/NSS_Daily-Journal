@@ -22,25 +22,39 @@
     </nav>
     <article class="container">
         <form action="">
-            <div class="form-group">
-                <label for="date">Date:</label>
-                <input class="" id="date" type="date">
+            <div class="form-row">
+                <div class="form-group">
+                    <label class=" col-lg-2" for="date">Date:</label>
+                    <input class="form-control col-lg-auto" id="date" type="date">
+                </div>
             </div>
-            <div>
-                <label for="concepts">Concepts Covered:</label>
-                <input id="cencepts" placeholder="Concepts Covered" type="text">
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="concepts">Concepts Covered:</label>
+                    <input id="cencepts" class="form-control col-lg-auto" placeholder="Concepts Covered" type="text">
+                </div>
             </div>
-            <div>
-                <label for="journalentry">Journal Entry:</label>
-                <input id="journalentry" placeholder="Journal Entry" type="text">
+            <div class="form-row">
+                <!-- <div class="form-group">
+                    <label for="journalentry">Journal Entry:</label>
+                    <input id="journalentry" placeholder="Journal Entry" type="text" class="form-control col-lg-auto">
+                </div> -->
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">Journal Entry</span>
+                    </div>
+                    <textarea class="form-control" aria-label="Journal Entry"></textarea>
+                </div>
             </div>
-            <div>
-                <label for="mood">Mood for the Day:</label>
-                <select id="mood" name="inputMode" class="">
-                    <option value="Excited">Excited</option>
-                    <option value="Blue">Blue</option>
-                    <option value="Tired">Tired</option>
-                </select>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="mood">Mood for the Day:</label>
+                    <select id="mood" class="form-control col-lg-auto" name="inputMode">
+                        <option value="Excited">Excited</option>
+                        <option value="Blue">Blue</option>
+                        <option value="Tired">Tired</option>
+                    </select>
+                </div>
             </div>
 
             <div class="form-group">
