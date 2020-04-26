@@ -1,29 +1,15 @@
-// Object representing a new entry
-const newEntry = {
-    date: "string",
-    concepts: "string",
-    content: "string",
-    mood: "string"
-}
 
-// Every entry array
-let journalEntries = [{
-    date: "string",
-    concepts: "string",
-    content: "string",
-    mood: "string"
-}];
 
-// Function to push a new entry in the array
-let pushEntry = (entry) => {
-    journalEntries.push(entry)
-}
+// // Function to push a new entry in the array
+// let pushEntry = (entry) => {
+//     journalEntries.push(entry)
+// }
 
 
 
 let entryLog = document.getElementById("entryLog")
 const renderJournalEntries = (entryArray) => {
-    for (let entry = 0; entry <entryArray.length; entry++) {
+    for (let entry = 0; entry < entryArray.length; entry++) {
         let entryHTML = document.createElement("div")
         entryHTML.classList.add("renderedEntry")
         entryHTML.innerHTML =
@@ -36,5 +22,11 @@ const renderJournalEntries = (entryArray) => {
 
 }
 
-// Invoke the render function
-renderJournalEntries(journalEntries)
+// API integration
+fetch("http://localhost:3000/entries")
+    .then(data => data.json())
+    .then(data => {
+        console.log(data)
+        renderJournalEntries(data)
+    }     
+    )
