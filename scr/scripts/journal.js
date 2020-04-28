@@ -5,22 +5,45 @@
 //     journalEntries.push(entry)
 // }
 
-
-
+// Selecting entryLog Article
 let entryLog = document.getElementById("entryLog")
+
+// Creating the fragment to be append 
+let fragment = document.createDocumentFragment()
 const renderJournalEntries = (entryArray) => {
     for (let entry = 0; entry < entryArray.length; entry++) {
-        let entryHTML = document.createElement("div")
-        entryHTML.classList.add("renderedEntry")
-        entryHTML.innerHTML =
-            `<h2>Date: ${entryArray[entry].date}</h2>
-    <h2>Concepts: ${entryArray[entry].concepts}</h2>
-    <h2>Content: ${entryArray[entry].content}</h2>
-    <h2>Mood: ${entryArray[entry].mood}</h2>`
-        entryLog.appendChild(entryHTML)
-    }
+        
+        // Create parent element
+        let parentSection = document.createElement("section")
+        parentSection.classList.add("renderedEntry")
+        
+        // Rendering Date h2 
+        let rDate = document.createElement("h2")
+        rDate.textContent = entryArray[entry].date
+        parentSection.appendChild(rDate)
 
+        // Rendering Concepts h2
+        let rConcepts = document.createElement("h2")
+        rConcepts.textContent = entryArray[entry].concepts
+        parentSection.appendChild(rConcepts)
+        
+        // Rendering Content h2
+        let rContent = document.createElement("h2")
+        rContent.textContent = entryArray[entry].content
+        parentSection.appendChild(rContent)
+        
+        // Rendering Content h2
+        let rMood = document.createElement("h2")
+        rMood.textContent = entryArray[entry].mood
+        parentSection.appendChild(rMood)
+
+        // Appending the entry to the fragment to the fragment
+        fragment.appendChild(parentSection)
+    }
+    // Appending the fragment with all the entries in the document
+    entryLog.appendChild(fragment)
 }
+
 
 // API integration
 fetch("http://localhost:3000/entries")
@@ -28,5 +51,5 @@ fetch("http://localhost:3000/entries")
     .then(data => {
         console.log(data)
         renderJournalEntries(data)
-    }     
+    }
     )
