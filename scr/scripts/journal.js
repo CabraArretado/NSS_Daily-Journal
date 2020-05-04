@@ -1,5 +1,6 @@
 import API from "./data.js"
-import renderDOM from "./entriesDOM.js"
+import "./entriesDOM.js"
+import renderJournalEntries from "./entriesDOM.js"
 
 // Entry Input Object Factory
 let entryFactory = (date, concepts, content, mood) => {
@@ -11,27 +12,37 @@ let entryFactory = (date, concepts, content, mood) => {
     }
 }
 
-// Selecting entryLog Article
-let entryLog = document.getElementById("entryLog")
-// Function to add 
+// Function to add entry in the JSON server
 document.querySelector("#buttonSubmit").addEventListener("click", () => {
+
     event.preventDefault();
     let date = document.querySelector("#dateForm").value;
     let concepts = document.querySelector("#cenceptsForm").value;
     let content = document.querySelector("#contentForm").value;
     let mood = document.querySelector("#moodForm").value;
 
-    // console.log(!!date, !!concepts, !!content, !!mood)
 
     // Garantee that the object has all values
     if (!!date && !!concepts && !!content && !!mood){
+
+        // POST the object in the JSON-server
         API.postNewEntry(entryFactory(date, concepts, content, mood))
         .then(data => {
-            console.log(data)
+        console.log(data)
+        
+        // render the new data in the Past Entries
+        API.getJournalEntries()
+        .then(data => renderJournalEntries(data))
         }
         )
     } else {
         alert("Please compelte the entry in order to submit")
     }
-
 });
+
+
+// Render the Database once the Document is fully loaded 
+document.addEventListener("DOMContentLoaded", () => {
+    API.getJournalEntries()
+        .then(data => renderJournalEntries(data))
+})

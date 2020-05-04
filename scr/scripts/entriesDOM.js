@@ -2,17 +2,19 @@
 // Render Journal Entries function
 const renderJournalEntries = (entryArray) => {
 
+    // Selecting entryLog Article
+    let entryLog = document.getElementById("entryLog")
 
     console.log("render function")
     // Creating the fragment to be append 
     let fragment = document.createDocumentFragment()
 
     for (let entry in entryArray) {
-        
+
         // Create parent element
         let parentSection = document.createElement("section")
         parentSection.classList.add("renderedEntry")
-        
+
         // Rendering Date h2 
         let rDate = document.createElement("h2")
         rDate.textContent = entryArray[entry].date
@@ -22,12 +24,12 @@ const renderJournalEntries = (entryArray) => {
         let rConcepts = document.createElement("h2")
         rConcepts.textContent = entryArray[entry].concepts
         parentSection.appendChild(rConcepts)
-        
+
         // Rendering Content h2
         let rContent = document.createElement("h2")
         rContent.textContent = entryArray[entry].content
         parentSection.appendChild(rContent)
-        
+
         // Rendering Content h2
         let rMood = document.createElement("h2")
         rMood.textContent = entryArray[entry].mood
@@ -41,4 +43,4 @@ const renderJournalEntries = (entryArray) => {
 }
 
 // Export
-export default {renderJournalEntries}
+export default renderJournalEntries
