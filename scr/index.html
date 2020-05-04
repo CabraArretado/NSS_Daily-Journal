@@ -14,42 +14,41 @@
 </head>
 
 <body>
-    <!-- New Entry Form -->
     <nav class="navbar navbar-dark bg-dark">
         <a class="navbar-brand" href="#">
             Daily Journal - Felipe
         </a>
     </nav>
+
+    <!-- New Entry Form -->
+
     <article class="container">
-        <form action="">
+        <form>
             <div class="form-row">
                 <div class="form-group">
                     <label class=" col-lg-2" for="date">Date:</label>
-                    <input class="form-control col-lg-auto" id="date" type="date">
+                    <input class="form-control col-lg-auto" id="dateForm" type="date">
                 </div>
             </div>
             <div class="form-row">
                 <div class="form-group">
                     <label for="concepts">Concepts Covered:</label>
-                    <input id="cencepts" class="form-control col-lg-auto" placeholder="Concepts Covered" type="text">
+                    <input id="cenceptsForm" class="form-control col-lg-auto" placeholder="Concepts Covered" type="text">
                 </div>
             </div>
             <div class="form-row">
-                <!-- <div class="form-group">
-                    <label for="journalentry">Journal Entry:</label>
-                    <input id="journalentry" placeholder="Journal Entry" type="text" class="form-control col-lg-auto">
-                </div> -->
                 <div class="input-group">
                     <div class="input-group-prepend">
                         <span class="input-group-text">Journal Entry</span>
                     </div>
-                    <textarea class="form-control" aria-label="Journal Entry"></textarea>
+                    <textarea class="form-control" id="contentForm" aria-label="Journal Entry"></textarea>
                 </div>
             </div>
             <div class="form-row">
                 <div class="form-group">
                     <label for="mood">Mood for the Day:</label>
-                    <select id="mood" class="form-control col-lg-auto" name="inputMode">
+                    <select id="moodForm" class="form-control col-lg-auto" name="inputMood">
+                        <option value="">Select Mood</option>
                         <option value="Excited">Excited</option>
                         <option value="Blue">Blue</option>
                         <option value="Tired">Tired</option>
@@ -58,7 +57,7 @@
             </div>
 
             <div class="form-group">
-                <button class="btn btn-primary" type="submit" id="button">Record Journal Entry</button>
+                <button class="btn btn-primary" type="submit" id="buttonSubmit">Record Journal Entry</button>
             </div>
     </article>
 
@@ -68,7 +67,7 @@
     </article>
 
     <!-- Script -->
-    <script src="scripts/journal.js"></script>
+    <script type="module" src="scripts/journal.js"></script>
 </body>
 
 </html>

@@ -1,11 +1,18 @@
 {
-    "entries": [
-        {
-            "id": 1,
-            "date": "string",
-            "concepts": "string",
-            "content": "string",
-            "mood": "string"
-        }
-    ]
+  "entries": [
+    {
+      "id": 1,
+      "date": "string",
+      "concepts": "string",
+      "content": "string",
+      "mood": "string"
+    },
+    {
+      "date": "2020-05-04",
+      "concepts": "Fetch post request",
+      "content": "Learned how to post request to the API",
+      "mood": "Excited",
+      "id": 2
+    }
+  ]
 }
