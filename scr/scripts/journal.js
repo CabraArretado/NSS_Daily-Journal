@@ -27,7 +27,12 @@ document.querySelector("#buttonSubmit").addEventListener("click", () => {
     if (!!date && !!concepts && !!content && !!mood){
         API.postNewEntry(entryFactory(date, concepts, content, mood))
         .then(data => {
-            console.log(data)
+        console.log(data)
+        date = ""
+        concepts = ''
+        content = ""
+        mood = ""
+        renderDOM.renderJournalEntries(API.getJournalEntries())
         }
         )
     } else {
