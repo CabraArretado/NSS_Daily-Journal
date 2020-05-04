@@ -1,5 +1,6 @@
 import API from "./data.js"
-import renderDOM from "./entriesDOM.js"
+import "./entriesDOM.js"
+import renderJournalEntries from "./entriesDOM.js"
 
 // Entry Input Object Factory
 let entryFactory = (date, concepts, content, mood) => {
@@ -32,7 +33,8 @@ document.querySelector("#buttonSubmit").addEventListener("click", () => {
         concepts = ''
         content = ""
         mood = ""
-        renderDOM.renderJournalEntries(API.getJournalEntries())
+        API.getJournalEntries()
+        .then(data => renderJournalEntries(data))
         }
         )
     } else {

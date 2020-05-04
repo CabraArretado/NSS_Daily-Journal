@@ -41,4 +41,4 @@ const renderJournalEntries = (entryArray) => {
 }
 
 // Export
-export default {renderJournalEntries}
+export default renderJournalEntries
