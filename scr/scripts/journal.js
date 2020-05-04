@@ -14,23 +14,24 @@ let entryFactory = (date, concepts, content, mood) => {
 // Selecting entryLog Article
 let entryLog = document.getElementById("entryLog")
 // Function to add 
-document.querySelector("form").preventDefault;
 document.querySelector("#buttonSubmit").addEventListener("click", () => {
-    event.preventDefault;
+    event.preventDefault();
     let date = document.querySelector("#dateForm").value;
     let concepts = document.querySelector("#cenceptsForm").value;
     let content = document.querySelector("#contentForm").value;
     let mood = document.querySelector("#moodForm").value;
-    if (!!date && !!concepts && !!content && !!mood) {
 
-        // create new obj and post it
+    // console.log(!!date, !!concepts, !!content, !!mood)
+
+    // Garantee that the object has all values
+    if (!!date && !!concepts && !!content && !!mood){
         API.postNewEntry(entryFactory(date, concepts, content, mood))
         .then(data => {
-            date = ""
-            concepts = ""
-            content = ""
-            mood = "Excited"
-            renderDOM.renderJournalEntries(data)
-        })
+            console.log(data)
+        }
+        )
+    } else {
+        alert("Please compelte the entry in order to submit")
     }
+
 });
