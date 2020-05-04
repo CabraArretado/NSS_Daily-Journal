@@ -1,8 +1,12 @@
-// Creating the fragment to be append 
-let fragment = document.createDocumentFragment()
 
 // Render Journal Entries function
 const renderJournalEntries = (entryArray) => {
+
+
+    console.log("render function")
+    // Creating the fragment to be append 
+    let fragment = document.createDocumentFragment()
+
     for (let entry in entryArray) {
         
         // Create parent element
@@ -37,4 +41,4 @@ const renderJournalEntries = (entryArray) => {
 }
 
 // Export
-export default {fragment, renderJournalEntries}
+export default {renderJournalEntries}

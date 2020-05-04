@@ -1,11 +1,11 @@
 {
-    "entries": [
-        {
-            "id": 1,
-            "date": "string",
-            "concepts": "string",
-            "content": "string",
-            "mood": "string"
-        }
-    ]
+  "entries": [
+    {
+      "id": 1,
+      "date": "string",
+      "concepts": "string",
+      "content": "string",
+      "mood": "string"
+    }
+  ]
 }
