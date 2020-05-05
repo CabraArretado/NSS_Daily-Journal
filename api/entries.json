@@ -6,34 +6,6 @@
       "content": "Learned how to post request to the API",
       "mood": "Excited",
       "id": 1
-    },
-    {
-      "date": "2020-05-12",
-      "concepts": "API",
-      "content": "aaaa",
-      "mood": "Excited",
-      "id": 2
-    },
-    {
-      "date": "2020-05-07",
-      "concepts": "aaa",
-      "content": "aaaa",
-      "mood": "Blue",
-      "id": 3
-    },
-    {
-      "date": "2020-05-12",
-      "concepts": "bbbb",
-      "content": "bbbbbbbbbbbbbbbb",
-      "mood": "Tired",
-      "id": 4
-    },
-    {
-      "date": "2020-05-06",
-      "concepts": "jjjjjjjjjjjjj",
-      "content": "jjjjjjjjjjjjjjjjjjjjjj",
-      "mood": "Blue",
-      "id": 5
     }
   ]
 }
