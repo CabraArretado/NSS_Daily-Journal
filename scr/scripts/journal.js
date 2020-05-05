@@ -22,17 +22,18 @@ document.querySelector("#buttonSubmit").addEventListener("click", () => {
 
 
     // Garantee that the object has all values
-    if (!!date && !!concepts && !!content && !!mood) {
-
+    if (!!date && !!concepts && !!content && !!mood){
+        
 
         // POST the object in the JSON-server
-        API.request(entryFactory(date, concepts, content, mood), "POST")
-            .then(data => {
-                // render the new data in the Past Entries
-                API.request()
-                    .then(data => renderJournalEntries(data))
-            }
-            )
+        API.postNewEntry(entryFactory(date, concepts, content, mood))
+        .then(data => {
+        
+            // render the new data in the Past Entries
+            API.getJournalEntries()
+            .then(data => renderJournalEntries(data))
+        }
+        )
     } else {
         alert("Please compelte the entry in order to submit")
     }
@@ -41,6 +42,6 @@ document.querySelector("#buttonSubmit").addEventListener("click", () => {
 
 // Render the Database once the Document is fully loaded 
 document.addEventListener("DOMContentLoaded", () => {
-    API.request()
+    API.getJournalEntries()
         .then(data => renderJournalEntries(data))
 })
