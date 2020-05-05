@@ -5,7 +5,9 @@ const renderJournalEntries = (entryArray) => {
     // Selecting entryLog Article
     let entryLog = document.getElementById("entryLog")
 
-    console.log("render function")
+    // Cleaning entryLog
+    entryLog.textContent = ""
+
     // Creating the fragment to be append 
     let fragment = document.createDocumentFragment()
 
@@ -30,7 +32,7 @@ const renderJournalEntries = (entryArray) => {
         rContent.textContent = entryArray[entry].content
         parentSection.appendChild(rContent)
 
-        // Rendering Content h2
+        // Rendering Mood h2
         let rMood = document.createElement("h2")
         rMood.textContent = entryArray[entry].mood
         parentSection.appendChild(rMood)
