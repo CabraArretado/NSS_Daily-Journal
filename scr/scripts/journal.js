@@ -1,5 +1,4 @@
 import API from "./data.js"
-import "./entriesDOM.js"
 import renderJournalEntries from "./entriesDOM.js"
 
 // Entry Input Object Factory
@@ -24,6 +23,7 @@ document.querySelector("#buttonSubmit").addEventListener("click", () => {
 
     // Garantee that the object has all values
     if (!!date && !!concepts && !!content && !!mood){
+        
 
         // POST the object in the JSON-server
         API.postNewEntry(entryFactory(date, concepts, content, mood))
