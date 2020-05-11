@@ -22,26 +22,38 @@ document.querySelector("#buttonSubmit").addEventListener("click", () => {
 
 
     // Garantee that the object has all values
-    if (!!date && !!concepts && !!content && !!mood){
-        
+    if (!!date && !!concepts && !!content && !!mood) {
+
 
         // POST the object in the JSON-server
-        API.postNewEntry(entryFactory(date, concepts, content, mood))
-        .then(data => {
-        
-            // render the new data in the Past Entries
-            API.getJournalEntries()
-            .then(data => renderJournalEntries(data))
-        }
-        )
+        API.post(entryFactory(date, concepts, content, mood))
+            .then(data => {
+
+                // render the new data in the Past Entries
+                API.get()
+                    .then(data => renderJournalEntries(data))
+            }
+            )
     } else {
         alert("Please compelte the entry in order to submit")
     }
-});
+})
 
 
 // Render the Database once the Document is fully loaded 
 document.addEventListener("DOMContentLoaded", () => {
-    API.getJournalEntries()
+    API.get()
         .then(data => renderJournalEntries(data))
+})
+
+// Search Section
+document.getElementById("searchMood").addEventListener("click", () => {
+    const valueC = event.target.value
+    if (!!valueC) {
+        console.log(`Mood Search: ${valueC}`)
+        API.get()
+            .then(data => {
+                renderJournalEntries(data.filter(e => e["mood"] == valueC))
+            })
+    }
 })

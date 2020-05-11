@@ -2,3 +2,7 @@
     border: 1px black solid;
     border-radius: 10px;
 }
+
+.search-cont {
+    border: 3px solid black;
+}
