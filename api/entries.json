@@ -6,6 +6,13 @@
       "content": "Learned how to post request to the API",
       "mood": "Excited",
       "id": 1
+    },
+    {
+      "date": "2020-05-11",
+      "concepts": "fetch PUT / DELETE",
+      "content": "How to use fetch() to edit or delete a item in the JSON server",
+      "mood": "Blue",
+      "id": 2
     }
   ]
 }
