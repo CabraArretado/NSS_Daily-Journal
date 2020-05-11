@@ -14,7 +14,9 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-dark bg-dark">
+
+    <!-- Nav Bar -->
+    <nav class="navbar navbar-dark bg-dark mb-3">
         <a class="navbar-brand" href="#">
             Daily Journal - Felipe
         </a>
@@ -23,43 +25,76 @@
     <!-- New Entry Form -->
 
     <article class="container">
-        <form>
-            <div class="form-row">
-                <div class="form-group">
-                    <label class=" col-lg-2" for="date">Date:</label>
-                    <input class="form-control col-lg-auto" id="dateForm" type="date">
-                </div>
-            </div>
-            <div class="form-row">
-                <div class="form-group">
-                    <label for="concepts">Concepts Covered:</label>
-                    <input id="cenceptsForm" class="form-control col-lg-auto" placeholder="Concepts Covered" type="text">
-                </div>
-            </div>
-            <div class="form-row">
-                <div class="input-group">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text">Journal Entry</span>
+        <div class="jumbotron">
+            <h1 class="display-4">New Journal Entry</h1>
+            <form class="mt-5">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label class=" col-lg-2" for="date">Date:</label>
+                        <input class="form-control col-lg-auto" id="dateForm" type="date">
                     </div>
-                    <textarea class="form-control" id="contentForm" aria-label="Journal Entry"></textarea>
                 </div>
-            </div>
-            <div class="form-row">
-                <div class="form-group">
-                    <label for="mood">Mood for the Day:</label>
-                    <select id="moodForm" class="form-control col-lg-auto" name="inputMood">
-                        <option value="">Select Mood</option>
-                        <option value="Excited">Excited</option>
-                        <option value="Blue">Blue</option>
-                        <option value="Tired">Tired</option>
-                    </select>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="concepts">Concepts Covered:</label>
+                        <input id="cenceptsForm" class="form-control col-lg-auto" placeholder="Concepts Covered"
+                            type="text">
+                    </div>
                 </div>
-            </div>
+                <div class="form-row">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">Journal Entry</span>
+                        </div>
+                        <textarea class="form-control" id="contentForm" aria-label="Journal Entry"></textarea>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="mood">Mood for the Day:</label>
+                        <select id="moodForm" class="form-control col-lg-auto" name="inputMood">
+                            <option value="">Select Mood</option>
+                            <option value="Excited">Excited</option>
+                            <option value="Blue">Blue</option>
+                            <option value="Tired">Tired</option>
+                        </select>
+                    </div>
+                </div>
 
-            <div class="form-group">
-                <button class="btn btn-primary" type="submit" id="buttonSubmit">Record Journal Entry</button>
-            </div>
+                <div class="form-group">
+                    <button class="btn btn-primary" type="submit" id="buttonSubmit">Record Journal Entry</button>
+                </div>
+        </div>
     </article>
+    <!-- end New Entry Form -->
+
+    <!-- Search section -->
+
+    <section class="search-cont container my-auto">
+
+        <!-- Radio Mood -->
+        <div id="searchMood" class="form-check-inline p-2 m-2">
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="radioOption" id="--Excited" value="Excited">
+                <label class="form-check-label" for="--Excited">
+                    Excited
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="radioOption" id="--Blue" value="Blue">
+                <label class="form-check-label" for="--Blue">
+                    Blue
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="radioOption" id="--Tired" value="Tired">
+                <label class="form-check-label" for="--Tired">
+                    Tired
+                </label>
+            </div>
+        </div>
+        <!-- end Radio Mood -->
+    </section>
 
     <!-- Render the Entries -->
     <article id="entryLog" class="container">
