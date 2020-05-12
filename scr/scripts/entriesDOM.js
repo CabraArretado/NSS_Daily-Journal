@@ -15,6 +15,7 @@ const renderJournalEntries = (entryArray) => {
 
         // Create parent element
         let parentSection = document.createElement("section")
+        parentSection.setAttribute("id", `section--id--${entryArray[entry].id}`)
         parentSection.classList.add("renderedEntry", "card", "m-2")
 
         // Rendering Date h2 
@@ -42,18 +43,24 @@ const renderJournalEntries = (entryArray) => {
         // Rendering Mood h2
         let rMood = document.createElement("p")
         rMood.classList.add("oo")
-        if (entryArray[entry].mood == "Excited") {rMood.textContent = "😁 " + entryArray[entry].mood}
-        if (entryArray[entry].mood == "Blue") {rMood.textContent = "🤨 " + entryArray[entry].mood}
-        if (entryArray[entry].mood == "Tired") {rMood.textContent = "😣 " + entryArray[entry].mood}
+        if (entryArray[entry].mood == "Excited") { rMood.textContent = "😁 " + entryArray[entry].mood }
+        if (entryArray[entry].mood == "Blue") { rMood.textContent = "🤨 " + entryArray[entry].mood }
+        if (entryArray[entry].mood == "Tired") { rMood.textContent = "😣 " + entryArray[entry].mood }
         divBody.appendChild(rMood)
+
+        //Edit button
+        let buttonE = document.createElement("button")
+        buttonE.classList.add("btn", "btn-primary", "mr-2")
+        buttonE.setAttribute("id", `edit--id--${entryArray[entry].id}`)
+        buttonE.textContent = "Edit"
+        divBody.appendChild(buttonE)
 
         // Delete button 
         let buttonD = document.createElement("button")
         buttonD.classList.add("btn", "btn-primary")
-        buttonD.setAttribute("id", `entry--id--${entryArray[entry].id}`)
+        buttonD.setAttribute("id", `delete--id--${entryArray[entry].id}`)
         buttonD.textContent = "Delete"
         divBody.appendChild(buttonD)
-
 
         // Appending the entry to the fragment
         parentSection.appendChild(divBody)
