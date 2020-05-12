@@ -20,10 +20,8 @@ document.querySelector("#buttonSubmit").addEventListener("click", () => {
     let content = document.querySelector("#contentForm").value;
     let mood = document.querySelector("#moodForm").value;
 
-
     // Garantee that the object has all values
     if (!!date && !!concepts && !!content && !!mood) {
-
 
         // POST the object in the JSON-server
         API.post(entryFactory(date, concepts, content, mood))
@@ -39,6 +37,22 @@ document.querySelector("#buttonSubmit").addEventListener("click", () => {
     }
 })
 
+// Detele entry
+const entryLoga = document.getElementById("entryLog")
+entryLoga.addEventListener("click", event => {
+    let entryID = event.target.id.split("--")[2]
+
+    // Pop Up Confirm
+    if (confirm("The entry will be permanently deleted. Are you sure?")){
+        API.deleteEntry(entryID)
+        .then(data => {
+            API.get()
+            .then(data => renderJournalEntries(data))
+        })
+    }
+
+})
+
 
 // Render the Database once the Document is fully loaded 
 document.addEventListener("DOMContentLoaded", () => {
@@ -50,7 +64,6 @@ document.addEventListener("DOMContentLoaded", () => {
 document.getElementById("searchMood").addEventListener("click", () => {
     const valueC = event.target.value
     if (!!valueC) {
-        console.log(`Mood Search: ${valueC}`)
         API.get()
             .then(data => {
                 renderJournalEntries(data.filter(e => e["mood"] == valueC))

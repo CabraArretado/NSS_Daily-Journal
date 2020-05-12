@@ -3,7 +3,7 @@
 const renderJournalEntries = (entryArray) => {
 
     // Selecting entryLog Article
-    let entryLog = document.getElementById("entryLog")
+    const entryLog = document.getElementById("entryLog")
 
     // Cleaning entryLog
     entryLog.textContent = ""
@@ -47,7 +47,15 @@ const renderJournalEntries = (entryArray) => {
         if (entryArray[entry].mood == "Tired") {rMood.textContent = "😣 " + entryArray[entry].mood}
         divBody.appendChild(rMood)
 
-        // Appending the entry to the fragment to the fragment
+        // Delete button 
+        let buttonD = document.createElement("button")
+        buttonD.classList.add("btn", "btn-primary")
+        buttonD.setAttribute("id", `entry--id--${entryArray[entry].id}`)
+        buttonD.textContent = "Delete"
+        divBody.appendChild(buttonD)
+
+
+        // Appending the entry to the fragment
         parentSection.appendChild(divBody)
         fragment.appendChild(parentSection)
     }
