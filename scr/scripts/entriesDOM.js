@@ -62,7 +62,6 @@ const renderJournalEntries = (entryArray) => {
         buttonD.textContent = "Delete"
         divBody.appendChild(buttonD)
 
-
         // Appending the entry to the fragment
         parentSection.appendChild(divBody)
         fragment.appendChild(parentSection)

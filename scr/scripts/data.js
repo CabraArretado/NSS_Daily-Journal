@@ -14,7 +14,7 @@ const API = {
             .then(response => response.json())
     },
 
-    // GET
+    // GET with new parameter
     get(id = null) {
         // Without parameter returns all data
         if (!id) {
