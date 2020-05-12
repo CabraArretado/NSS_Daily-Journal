@@ -15,20 +15,41 @@ const API = {
     },
 
     // GET
-    get() {
-        return fetch("http://localhost:3000/entries")
-            .then(response => response.json())
-    },
+    get(id = null) {
+        // Without parameter returns all data
+        if (!id) {
+            return fetch("http://localhost:3000/entries")
+                .then(response => response.json())
+        }
+        // With id as parameter returns specific entry
+        else {
+            return fetch(`http://localhost:3000/entries/${id}`)
+                .then(response => response.json())
+        }
+    }
+    ,
 
     //DELETE
-    deleteEntry(num) {
-        return fetch(`http://localhost:3000/entries/${num}`,
-        {
-            method: "DELETE",
-            headers: {
-                'Content-Type': 'application/json'
-            }
-        })
+    deleteEntry(id) {
+        return fetch(`http://localhost:3000/entries/${id}`,
+            {
+                method: "DELETE",
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            })
+    },
+
+    //PUT
+    put(obj, id) {
+        return fetch(`http://localhost:3000/entries/${id}`,
+            {
+                method: "PUT",
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(obj)
+            })
     }
 }
 // Export the API obj
