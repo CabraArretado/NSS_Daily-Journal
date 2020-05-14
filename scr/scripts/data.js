@@ -50,7 +50,13 @@ const API = {
                 },
                 body: JSON.stringify(obj)
             })
+    },
+
+    async search(input) {
+        let datas = await fetch(`http://localhost:3000/entries/?q=${input}`).then(data => data.json())
+        return datas
     }
+
 }
 // Export the API obj
 export default API

@@ -71,30 +71,45 @@
 
     <!-- Search section -->
 
-    <section class="search-cont container my-auto">
+    <section class="container">
 
-        <!-- Radio Mood -->
-        <div id="searchMood" class="form-check-inline p-2 m-2">
-            <div class="form-check">
-                <input class="form-check-input" type="radio" name="radioOption" id="--Excited" value="Excited">
-                <label class="form-check-label" for="--Excited">
-                    Excited
-                </label>
+        <div class="my-auto form-row">
+
+            <!-- Radio Mood -->
+            <div id="searchMood" class="form-group form-check-inline col-md-6 search-cont">
+
+                <label for="radioOption">Filter Entries by Mood</label>
+
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="radioOption" id="--Excited" value="Excited">
+                    <label class="form-check-label" for="--Excited">
+                        Excited
+                    </label>
+                </div>
+
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="radioOption" id="--Blue" value="Blue">
+                    <label class="form-check-label" for="--Blue">
+                        Blue
+                    </label>
+                </div>
+
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="radioOption" id="--Tired" value="Tired">
+                    <label class="form-check-label" for="--Tired">
+                        Tired
+                    </label>
+                </div>
+
             </div>
-            <div class="form-check">
-                <input class="form-check-input" type="radio" name="radioOption" id="--Blue" value="Blue">
-                <label class="form-check-label" for="--Blue">
-                    Blue
-                </label>
-            </div>
-            <div class="form-check">
-                <input class="form-check-input" type="radio" name="radioOption" id="--Tired" value="Tired">
-                <label class="form-check-label" for="--Tired">
-                    Tired
-                </label>
+            <!-- end Radio Mood -->
+
+            <!-- Search words -->
+            <div class="form-group col-6 p-1 search-cont">
+                <label for="searchText">Search Jornal Entries</label>
+                <input id="searchText" class="form-control col-lg-auto" placeholder="Type a word" type="text">
             </div>
         </div>
-        <!-- end Radio Mood -->
     </section>
 
     <!-- Render the Entries -->

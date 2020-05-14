@@ -12,6 +12,9 @@ let entryFactory = (date, concepts, content, mood) => {
     }
 }
 
+// Cache
+let cache;
+
 // Function to add entry in the JSON server
 document.querySelector("#buttonSubmit").addEventListener("click", () => {
 
@@ -20,7 +23,7 @@ document.querySelector("#buttonSubmit").addEventListener("click", () => {
     let concepts = document.querySelector("#cenceptsForm").value;
     let content = document.querySelector("#contentForm").value;
     let mood = document.querySelector("#moodForm").value;
-    let idEdit = document.querySelector("#recipeId").value;
+    let idEdit = document.querySelector("#recipeId"); // Not .value, but the element itself
 
     const objeto = entryFactory(date, concepts, content, mood)
 
@@ -28,7 +31,7 @@ document.querySelector("#buttonSubmit").addEventListener("click", () => {
     if (!!date && !!concepts && !!content && !!mood) {
 
         // POST the object in the JSON-server
-        if(!idEdit){
+        if(!idEdit.value){
         API.post(objeto)
             .then(data => {
 
@@ -41,7 +44,7 @@ document.querySelector("#buttonSubmit").addEventListener("click", () => {
         // Edit the object in the JSON-server
         else {
             // PUT
-            API.put(objeto, idEdit)
+            API.put(objeto, idEdit.value)
             .then(a => {
                 //Reset the idEdit.value
                 idEdit.value = ""
@@ -104,7 +107,7 @@ document.addEventListener("DOMContentLoaded", () => {
         .then(data => renderJournalEntries(data))
 })
 
-// Search Section
+/* Search Section */
 document.getElementById("searchMood").addEventListener("click", () => {
     const valueC = event.target.value
     if (!!valueC) {
@@ -114,3 +117,10 @@ document.getElementById("searchMood").addEventListener("click", () => {
             })
     }
 })
+
+document.getElementById("searchText").addEventListener("keydown", (event) => {
+    
+    let input = document.getElementById("searchText").value;
+    
+}
+)
