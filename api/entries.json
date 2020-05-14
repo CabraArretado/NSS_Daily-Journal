@@ -13,6 +13,13 @@
       "content": "Learned how to post request to the API.",
       "mood": "Excited",
       "id": 3
+    },
+    {
+      "date": "2020-05-14",
+      "concepts": "Async Functions",
+      "content": "Learned by myself async functions",
+      "mood": "Excited",
+      "id": 4
     }
   ]
 }

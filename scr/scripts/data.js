@@ -53,8 +53,9 @@ const API = {
     },
 
     async search(input) {
-        let datas = await fetch(`http://localhost:3000/entries/?q=${input}`).then(data => data.json())
-        return datas
+        let data1 = await fetch(`http://localhost:3000/entries/?q=${input}`)
+        let data2 = await data1.json()
+        return data2
     }
 
 }
