@@ -6,6 +6,7 @@ import renderJournalEntries from "./entriesDOM.js"
 
 // Render the Database once the Document is fully loaded 
 document.addEventListener("DOMContentLoaded", () => {
+    renderMoodForm()
     renderUpTodate()
 })
 
@@ -17,7 +18,7 @@ document.querySelector("#buttonSubmit").addEventListener("click", () => {
     let date = document.querySelector("#dateForm").value;
     let concepts = document.querySelector("#cenceptsForm").value;
     let content = document.querySelector("#contentForm").value;
-    let mood = document.querySelector("#moodForm").value;
+    let mood = +document.querySelector("#moodForm").value;
     let idEdit = document.querySelector("#recipeId"); // Not .value, but the element itself
     
     const objeto = entryFactory(date, concepts, content, mood)
@@ -42,6 +43,7 @@ document.querySelector("#buttonSubmit").addEventListener("click", () => {
                 // render the updated database
                 alert("Entry edited sucessfuly!")
                 renderUpTodate()
+                updateFormFields()
             })
         }
     } else {
@@ -114,7 +116,7 @@ const updateFormFields = (data = null) => {
         date.value = data["date"]
         concepts.value = data["concepts"]
         content.value = data["content"]
-        mood.value = data["mood"]
+        mood.value = data["moodId"]
         idEdit.value = data["id"]
     }
     else {
@@ -127,14 +129,26 @@ const updateFormFields = (data = null) => {
 }
 
 // Entry Object Factory
-let entryFactory = (date, concepts, content, mood) => {
+let entryFactory = (date, concepts, content, moodId) => {
     return {
         date,
         concepts,
         content,
-        mood
+        moodId
     }
 }
 
+// Render mood Form with the form db
+let renderMoodForm = async () => {
+    console.log("moooooood")
+    let moodsList = await API.getMoods();
+    const formMood = document.querySelector("#moodForm")
+    moodsList.forEach(e => {
+        let option = document.createElement("option")
+        option.setAttribute("value", `${e.id}`)
+        option.innerText = e.label
+        formMood.appendChild(option)
+    })
+}
 /* +++++++++++++++++++++++++ END Acessory funcitons ++++++++++++++++++++++++++++++++++++++ */
 

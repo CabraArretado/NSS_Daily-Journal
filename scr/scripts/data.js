@@ -52,12 +52,18 @@ const API = {
             })
     },
 
+    // Search
     async search(input) {
         let data1 = await fetch(`http://localhost:3000/entries/?q=${input}`)
         let data2 = await data1.json()
         return data2
-    }
+    },
 
+    // Get mood 
+    async getMoods(){
+        let moods = await fetch(`http://localhost:3000/moods`)
+        return moods.json()
+    }
 }
 // Export the API obj
 export default API

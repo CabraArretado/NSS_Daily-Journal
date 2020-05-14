@@ -4,21 +4,39 @@
       "date": "2020-05-11",
       "concepts": "fetch PUT / DELETE",
       "content": "How to use fetch() to edit or delete a item in the JSON server",
-      "mood": "Blue",
+      "moodId": 2,
       "id": 2
     },
     {
       "date": "2020-05-04",
       "concepts": "Fetch post request",
       "content": "Learned how to post request to the API.",
-      "mood": "Excited",
+      "moodId": 1,
       "id": 3
     },
     {
       "date": "2020-05-14",
       "concepts": "Async Functions",
       "content": "Learned by myself async functions",
-      "mood": "Excited",
+      "moodId": 1,
+      "id": 4
+    }
+  ],
+  "moods": [
+    {
+      "label": "Excited 😁",
+      "id": 1
+    },
+    {
+      "label": "Gray",
+      "id": 2
+    },
+    {
+      "label": "Tired",
+      "id": 3
+    },
+    {
+      "label": "Idk even who I am",
       "id": 4
     }
   ]

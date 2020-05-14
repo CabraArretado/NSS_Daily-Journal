@@ -43,9 +43,10 @@ const renderJournalEntries = (entryArray) => {
         // Rendering Mood h2
         let rMood = document.createElement("p")
         rMood.classList.add("oo")
-        if (entryArray[entry].mood == "Excited") { rMood.textContent = "😁 " + entryArray[entry].mood }
-        if (entryArray[entry].mood == "Blue") { rMood.textContent = "🤨 " + entryArray[entry].mood }
-        if (entryArray[entry].mood == "Tired") { rMood.textContent = "😣 " + entryArray[entry].mood }
+        rMood.textContent = entryArray[entry].moodId
+        // if (entryArray[entry].mood == "Excited") { rMood.textContent = "😁 " + entryArray[entry].mood }
+        // if (entryArray[entry].mood == "Blue") { rMood.textContent = "🤨 " + entryArray[entry].mood }
+        // if (entryArray[entry].mood == "Tired") { rMood.textContent = "😣 " + entryArray[entry].mood }
         divBody.appendChild(rMood)
 
         //Edit button
